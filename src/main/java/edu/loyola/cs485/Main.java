@@ -1,5 +1,8 @@
 package edu.loyola.cs485;
 
+import edu.loyola.cs485.model.dao.ClientDAO;
+import edu.loyola.cs485.model.entity.Client;
+
 import java.sql.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -17,12 +20,17 @@ public class Main {
 
         System.out.println("Hello World!");
         try{
+            ClientDAO dao = new ClientDAO();
+            //dao.delete(100);
+            //Client c = dao.read(102);
+            //System.out.println(c.getName() );
 
-            //unsecureInsertArtist(con);
-            unsecureSelectClient();
-            //secureInsertClient();
+            Client newClient = new Client();
+            newClient.setName("Example 2");
+            newClient.setEmail("ex2@world.com");
+            dao.create(newClient);
 
-            //System.out.println("New artist added!");
+           System.out.println("Client has been created "+newClient.getID() );
         }catch(SQLException ex){
             System.err.println(ex.getMessage());
         }
