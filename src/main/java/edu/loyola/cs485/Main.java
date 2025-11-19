@@ -21,6 +21,7 @@ public class Main {
     public static void main(String[] args) {
         MainFrame frame = new MainFrame(); // Instantiates the Window
         frame.setVisible(true); // Activates it (and turn it visible)
+
     }
 
     public static void secureInsertClient() throws SQLException{
